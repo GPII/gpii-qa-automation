@@ -3,7 +3,7 @@
 <suite name="Tests">
     <test name="Sikuli">
         <classes>
-            <class name="tests.TaskManager">
+            <class name="tests.Install">
             </class>
         </classes>
     </test>
