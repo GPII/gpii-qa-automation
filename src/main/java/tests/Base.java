@@ -5,7 +5,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.sikuli.script.KeyModifier;
-import org.sikuli.script.Region;
 import org.sikuli.script.Screen;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -13,7 +12,6 @@ import org.testng.annotations.BeforeClass;
 
 public class Base implements Config {
     Screen screen = new Screen();
-
     public ExtentHtmlReporter htmlReporter;
     public ExtentReports extent;
     public ExtentTest test;
@@ -30,9 +28,11 @@ public class Base implements Config {
         extent.setSystemInfo("Hostname", "Windows");
         // Minimize all active windows on the machine because can be clicked other buttons on the screen
         screen.type("d", KeyModifier.WIN);
+        // This is for vagrant debug  - used with vagrant provision command
         System.out.println(screen.getScreen());
-        System.out.println(screen.getNumberScreens());
+        System.out.println(Screen.getNumberScreens());
         System.out.println(screen.isOtherScreen());
+
 
 
     }
