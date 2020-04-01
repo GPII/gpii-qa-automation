@@ -12,8 +12,6 @@ public interface Config {
     Pattern taskManager = new Pattern(Path + "task_manager.png");
     Pattern morphicIcon = new Pattern(Path + "morphic_icon.png");
     Pattern nextButton = new Pattern(Path + "next_button.png");
-    Pattern removeButton = new Pattern(Path + "remove_button.png");
-    Pattern removeButtonWithIcon = new Pattern(Path + "remove_button_with_icon.png");
     Pattern finishButton = new Pattern(Path + "finish_button.png");
     Pattern accept = new Pattern(Path + "accept.png");
     Pattern installButton = new Pattern(Path + "install_button.png");

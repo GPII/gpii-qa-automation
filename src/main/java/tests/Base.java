@@ -32,9 +32,6 @@ public class Base implements Config {
         System.out.println(screen.getScreen());
         System.out.println(Screen.getNumberScreens());
         System.out.println(screen.isOtherScreen());
-
-
-
     }
 
     @AfterClass
