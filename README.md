@@ -26,10 +26,22 @@ i.e Test cases for Task Manager are in TaskManager class and there has a method 
 ### Running the Tests in a VM
 Prerequisites: Maven and Java 8 should be installed on Windows.
 
-Ensure that your virtual box is up and running, Windows is turned on, GPII app is up and running then navigate to folder with jar and testng.xml, open command prompt or powershell as an administrator and run the following command: 
-```bash
-mvn clean compile assembly:single && java -jar target/sik-1.0-SNAPSHOT-jar-with-dependencies.jar testng.xml
+Ensure that your virtual box is up and running, Windows is turned on, run the following commands on the terminal: 
+
+This command will change the resolution of the VM to 1600x1200
+```
+vagrant winrm -c "do.ps1 -c 'C:\ProgramData\chocolatey\bin\ChangeScreenResolution.exe 1600 1200'"
+```
+This command will run the UI tests 
+```
+vagrant winrm -c "do.ps1 -c 'java -jar ui-automation-1.0-SNAPSHOT-jar-with-dependencies.jar testng.xml'"
 ```
 
 
+
 A HMTL report is generated in the `test-output` subdirectory. Open html report in browser and look for executed test cases.
+
+Path to HTML report.
+```
+C:\vagrant\test-output\HTMLReport.html
+```

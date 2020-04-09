@@ -4,6 +4,11 @@
 
 Set-ExecutionPolicy Bypass; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
+##
+# Install Screen Resolution
+##
+
+choco install -y change-screen-resolution
 
 ##
 # Install Maven
@@ -17,5 +22,6 @@ choco install -y maven
 ##
 
 choco install -y jdk8
+
 
 

@@ -30,7 +30,7 @@ Vagrant.configure(2) do |config|
     vm.customize ["modifyvm", :id, "--ioapic", "on"]
     vm.customize ["setextradata", "global", "GUI/SuppressMessages", "all"]
   end
-  config.vm.provision "shell", path: "scripts.ps1", privileged: false
+  config.vm.provision "shell", path: "scripts.ps1", privileged: true
   config.vm.provision "shell", privileged: true, inline: <<-SHELL
     $url = "https://storage.googleapis.com/qa-morphic-installers/Morphic-1.3.4.r2-dev.200330133609.6e8a3321.msi"
     Import-Module BitsTransfer
@@ -39,6 +39,5 @@ Vagrant.configure(2) do |config|
     mvn clean compile assembly:single
     cp C:\\vagrant\\Morphic-1.3.4.msi C:\\Users\\vagrant\\Desktop\\
     cp C:\\vagrant\\target\\ui-automation-1.0-SNAPSHOT-jar-with-dependencies.jar C:\\vagrant\\
-    java -jar ui-automation-1.0-SNAPSHOT-jar-with-dependencies.jar testng.xml
   SHELL
 end
