@@ -3,8 +3,10 @@
 <suite name="Tests">
     <test name="Sikuli">
         <classes>
-            <class name="tests.Install">
-            </class>
+            <class name="tests.Install"/>
+            <class name="tests.TaskManager"/>
+<!--            <class name="tests.ChangeLanguage"/>-->
+<!--            <class name="tests.ScreenZoom"/>-->
         </classes>
     </test>
 </suite>

@@ -4,7 +4,7 @@ import org.sikuli.script.FindFailed;
 import org.testng.annotations.Test;
 
 public class TaskManager extends Base implements Config {
-    @Test()
+    @Test
     public void taskManager() throws FindFailed {
 
         if (screen.exists(stripTaskManager) == null) {

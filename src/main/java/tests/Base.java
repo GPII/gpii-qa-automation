@@ -6,17 +6,19 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.sikuli.script.KeyModifier;
 import org.sikuli.script.Screen;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 
 
 public class Base implements Config {
     Screen screen = new Screen();
-    public ExtentHtmlReporter htmlReporter;
-    public ExtentReports extent;
-    public ExtentTest test;
+    public static ExtentHtmlReporter htmlReporter;
+    public static ExtentReports extent;
+    public static ExtentTest test;
 
-    @BeforeClass
+    @BeforeSuite
     public void setUp() {
         htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/test-output/HTMLreport.html");
         htmlReporter.config().setTheme(Theme.DARK);
@@ -28,14 +30,23 @@ public class Base implements Config {
         extent.setSystemInfo("Hostname", "Windows");
         // Minimize all active windows on the machine because can be clicked other buttons on the screen
         screen.type("d", KeyModifier.WIN);
-        // This is for vagrant debug  - used with vagrant provision command
-        System.out.println(screen.getScreen());
-        System.out.println(Screen.getNumberScreens());
-        System.out.println(screen.isOtherScreen());
     }
 
-    @AfterClass
+    @AfterMethod
+    public synchronized void afterMethod(ITestResult result) {
+        if (result.getStatus() == ITestResult.FAILURE)
+            test.fail(result.getThrowable());
+        else if (result.getStatus() == ITestResult.SKIP)
+            test.skip(result.getThrowable());
+        else
+            test.pass("Test passed");
+
+        extent.flush();
+    }
+
+    @AfterSuite
     public void tearDown() {
         extent.flush();
     }
+
 }

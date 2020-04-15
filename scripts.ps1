@@ -23,5 +23,12 @@ choco install -y maven
 
 choco install -y jdk8
 
+##
+# Set the default browser Google Chrome
+##
+
+choco install -y SetDefaultBrowser
+SetDefaultBrowser HKLM "Google Chrome"
+
 
 

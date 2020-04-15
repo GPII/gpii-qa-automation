@@ -16,5 +16,16 @@ public interface Config {
     Pattern accept = new Pattern(Path + "accept.png");
     Pattern installButton = new Pattern(Path + "install_button.png");
     Pattern nextButtonInstall = new Pattern(Path + "next_button_install.png");
+    Pattern stripLanguage = new Pattern(Path + "strip_language.png");
+    Pattern hoverLanguage = new Pattern(Path + "hover_language.png");
+    Pattern helpMoreOptions= new Pattern(Path + "help_more_options.png");
+    Pattern helplearnMore= new Pattern(Path + "help_learn_more.png");
+    Pattern changeLanguageUrl= new Pattern(Path + "change_language_url.png");
+    Pattern closeIE = new Pattern(Path + "close_IE.png");
+
+
+    Pattern stripScreenZoom= new Pattern(Path + "strip_screen_zoom.png");
+    Pattern hoverScreenZoom= new Pattern(Path + "hover_screen_zoom.png");
+    Pattern screenZoomURL= new Pattern(Path + "screen_zoom_url.png");
 
 }
