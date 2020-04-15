@@ -28,4 +28,7 @@ public interface Config {
     Pattern hoverScreenZoom= new Pattern(Path + "hover_screen_zoom.png");
     Pattern screenZoomURL= new Pattern(Path + "screen_zoom_url.png");
 
+    Pattern removeButton = new Pattern(Path + "remove_button.png");
+    Pattern removeButtonWithIcon = new Pattern(Path + "remove_button_with_icon.png");
+
 }
