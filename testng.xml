@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Tests">
+    <test name="Sikuli">
+        <classes>
+            <class name="tests.Install"/>
+            <class name="tests.TaskManager"/>
+<!--            <class name="tests.ChangeLanguage"/>-->
+<!--            <class name="tests.ScreenZoom"/>-->
+            <class name="tests.Uninstall"/>
+        </classes>
+    </test>
+</suite>
